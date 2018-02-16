@@ -1612,6 +1612,7 @@ DRI2ScreenInit(ScreenPtr pScreen, DRI2InfoPtr info)
         } else {
             ds->driverNames[0] = ds->driverNames[1] = dri2_probe_driver_name(pScreen, info);
             if (!ds->driverNames[0])
+                free(ds);
                 return FALSE;
         }
     }
