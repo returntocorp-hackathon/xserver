@@ -94,7 +94,7 @@ XkmGetCARD8(FILE * file, int *pNRead)
 static CARD16
 XkmGetCARD16(FILE * file, int *pNRead)
 {
-    CARD16 val;
+    CARD16 val = NULL;
 
     if ((fread(&val, 2, 1, file) == 1) && (pNRead))
         (*pNRead) += 2;
@@ -104,7 +104,7 @@ XkmGetCARD16(FILE * file, int *pNRead)
 static CARD32
 XkmGetCARD32(FILE * file, int *pNRead)
 {
-    CARD32 val;
+    CARD32 val = NULL;
 
     if ((fread(&val, 4, 1, file) == 1) && (pNRead))
         (*pNRead) += 4;
